@@ -17,9 +17,9 @@ class PageLogin(object):
     def input_username(self):
         self.driver.find_element_by_name("username").send_keys("admin")
 
+    def input_password(self):
+        self.driver.find_element_by_id("password").send_keys("Admin@123")
     self.driver.get('http://gateway-uat.erp.ciec.com/oauth/login')
-    self.driver.find_element_by_name("username").send_keys("admin")
-    self.driver.find_element_by_id("password").send_keys("Admin@123")
     self.driver.find_element_by_xpath('//*[@id="loginFormAccount"]/div[2]/span/button').click()
     self.driver.implicitly_wait(30)
     text1 = self.driver.find_element_by_xpath(
